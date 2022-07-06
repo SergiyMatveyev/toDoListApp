@@ -3,12 +3,12 @@
 ## Command
 
 Prod: `npm start`
-Dev: `npm run start::dev`
+Dev: `npm run start:dev`
 
 ## Requirements
 
-1. express > 4.18.1,
-2. mongodb > 4.7.0,
+1. express => 4.18.1,
+2. mongodb => 4.7.0,
 
 ## Technologies
 
