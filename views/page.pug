@@ -1,0 +1,52 @@
+extends layout.pug
+ 
+block title
+    <title>#{title}</title>
+ 
+block content
+      <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1>#{title}</h1>
+            </div>
+            <div id="taskWrapper" class="col s12 m7" >
+                each task in tasks
+                    <div class="col s12" data-task="#{task._id}">
+                        <div class="card horizontal">
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <span class="card-title name">#{task.name}</span>
+                                    <blockquote class="description">#{task.description}</blockquote>
+                                </div>
+                                <div class="card-action">
+                                    <a class="waves-effect waves-light btn-small edit" onclick="handlerEditTask('#{task._id}', '#{task.name}', '#{task.description}')">Edit task</a>  
+                                    <a class="waves-effect waves-light btn-small red delete" onclick="handleRemoveById('#{task._id}')">Remove task</a>                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="col s12 m5">
+                <div class="row">
+                    <form id="taskForm" class="col s12" method="post">
+                        <input type="text" id="task_id" name="task_id" />
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Task's name" id="task_name" type="text" class="validate" name="task_name" require>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea placeholder="Task's description" id="task_description" class="materialize-textarea" name="task_description" require></textarea>
+                            </div>
+                        </div>
+                        <button id="submit" type="submit" class="waves-effect waves-light btn-large">Add new task</button>
+                        <a id="clear" class="waves-effect waves-light btn-large blue">Clear form</a>
+                    </form>
+                </div>
+                <a id="removeAll" class="waves-effect waves-light btn-large red">Remove All Task</a>
+            </div>
+        </div>
+      </div>
+    
+      

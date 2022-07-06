@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "outDir": "./disc",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
